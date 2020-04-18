@@ -5,15 +5,26 @@
 
 > A little project written in vuejs and tailwindcss to store sample components
 
+## Why this project ?
+
+The concept of this project was inspired to me by my friend [Louis Perdereau](https://github.com/lperdereau) because I am bad at frontend development so, this is more of a learning project.
+This is also for me the opportunity to learn more about the Github environment as I am more used to Gitlab.
+
 ## Install
 
-You can install the project's dependencies by running the following command
+You can install the project's dependencies by running the following command.
 ```sh
 npm install
 ```
 
+You can also build a Docker image from the project's repository after cloning it.
+```sh
+docker build -t <your-image-tag> .
+```
+
 ## Run tests
 
+The project is setup to use Jest as unit testing framework and Cypress for e2e testing.
 ```sh
 npm run test:unit
 npm run test:e2e
@@ -29,7 +40,7 @@ npm run test:e2e
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+As this is more going to be a learning project than a real community project, I am not going to be super reactive on feature requests but any feedback/advice are welcomed !
 
 Feel free to check [issues page](https://github.com/DreamyProtect/vue-components-bank/issues). 
 
