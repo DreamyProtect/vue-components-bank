@@ -13,8 +13,12 @@ steps:
   image: node:lts-slim
   commands:
   - npm run test:unit
+  depends_on:
+    - setup
 
 - name: e2e
   image: node:lts-slim
   commands:
   - npm run test:e2e
+  depends_on:
+    - setup
