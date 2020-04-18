@@ -18,6 +18,7 @@ steps:
 - name: e2e
   image: node:lts-slim
   commands:
+  - npm install cypress
   - npm run test:e2e
   depends_on:
     - setup
