@@ -6,7 +6,6 @@ steps:
   image: node:lts-slim
   commands:
   - npm ci
-  - npm run build
 
 - name: unit
   image: node:lts-slim
@@ -18,6 +17,6 @@ steps:
 - name: e2e
   image: node:lts-slim
   commands:
-  - npm run test:e2e --headless --browser chrome --config baseUrl="http://localhost:8080"
+  - npm run test:e2e
   depends_on:
     - setup
