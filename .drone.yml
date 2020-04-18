@@ -21,3 +21,23 @@ steps:
   - npm run test:e2e -- --headless
   depends_on:
   - setup
+
+- name: build
+  image: banzaicloud/drone-kaniko
+  settings:
+    email: chevreux.matthieu@hotmail.com
+    dockerfile: ./Dockerfile
+    registry: docker.pkg.github.com
+    repo: dreamyprotect/vue-components-bank
+  username:
+    from_secret: github_username
+  password:
+    from_secret: github_token
+  tags:
+    - ${DRONE_TAG}
+    - latest
+  depends_on: 
+    - e2e
+    - unit
+  when:
+    event: tag
