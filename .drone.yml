@@ -1,0 +1,43 @@
+kind: pipeline
+name: default
+
+steps:
+- name: setup
+  image: node:lts-slim
+  commands:
+  - npm ci
+
+- name: unit
+  image: node:lts-slim
+  commands:
+  - npm run test:unit
+  depends_on:
+  - setup
+
+- name: e2e
+  image: cypress/browsers:chrome67
+  commands:
+  - npm i @vue/cli-plugin-e2e-cypress@4.0.5 cypress
+  - npm run test:e2e -- --headless
+  depends_on:
+  - setup
+
+- name: build
+  image: banzaicloud/drone-kaniko
+  settings:
+    email: chevreux.matthieu@hotmail.com
+    dockerfile: ./Dockerfile
+    registry: docker.pkg.github.com
+    repo: dreamyprotect/vue-components-bank
+  username:
+    from_secret: github_username
+  password:
+    from_secret: github_token
+  tags:
+    - ${DRONE_TAG}
+    - latest
+  depends_on: 
+    - e2e
+    - unit
+  when:
+    event: tag
