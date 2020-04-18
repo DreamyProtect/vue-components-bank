@@ -12,12 +12,12 @@ steps:
   commands:
   - npm run test:unit
   depends_on:
-    - setup
+  - setup
 
 - name: e2e
-  image: cypress/base:10
+  image: cypress/browsers:chrome67
   commands:
-  - npm start & wait-on http://localhost:8080
-  - cypress run
+  - npm i @vue/cli-plugin-e2e-cypress@4.0.5 cypress
+  - npm run test:e2e -- --headless
   depends_on:
-    - setup
+  - setup
