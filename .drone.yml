@@ -15,8 +15,9 @@ steps:
     - setup
 
 - name: e2e
-  image: node:lts-slim
+  image: cypress/base:10
   commands:
-  - npm run test:e2e
+  - npm start & wait-on http://localhost:8080
+  - cypress run
   depends_on:
     - setup
