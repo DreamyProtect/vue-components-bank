@@ -25,7 +25,7 @@ steps:
 - name: release
   image: node:lts-slim
   commands:
-  - npx -p semantic-release-gitmoji -p @semantic-release/semantic-release -p @semantic-release/github semantic-release
+  - npx -p semantic-release-gitmoji -p semantic-release -p @semantic-release/github semantic-release
   environment:
     GITHUB_TOKEN:
       from_secret: github_token
