@@ -65,5 +65,11 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": "tailwind.config.js",
+      "autoprefixer": {}
+    }
   }
 }
