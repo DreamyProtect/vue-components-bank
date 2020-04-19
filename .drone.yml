@@ -22,6 +22,18 @@ steps:
   depends_on:
   - setup
 
+- name: release
+  image: node:lts-slim
+  commands:
+  - npx -p semantic-release-gitmoji -p @semantic-release/semantic-release -p @semantic-release/github semantic-release
+  environment:
+    GITHUB_TOKEN:
+      from_secret: github_token
+  when:
+    branch:
+    - master
+    event: push
+
 - name: build
   image: banzaicloud/drone-kaniko
   settings:
@@ -36,7 +48,7 @@ steps:
   tags:
     - ${DRONE_TAG}
     - latest
-  depends_on: 
+  depends_on:
     - e2e
     - unit
   when:
