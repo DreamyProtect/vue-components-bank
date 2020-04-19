@@ -8,6 +8,13 @@
   </div>
 </template>
 
+<script>
+import '@/assets/css/tailwind.css'
+export default {
+  name: 'App'
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
