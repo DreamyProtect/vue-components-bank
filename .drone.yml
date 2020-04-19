@@ -44,10 +44,10 @@ steps:
     dockerfile: ./Dockerfile
     registry: docker.pkg.github.com
     repo: dreamyprotect/vue-components-bank/bank-front
-  username:
-    from_secret: github_username
-  password:
-    from_secret: github_token
+    username:
+      from_secret: github_username
+    password:
+      from_secret: github_token
   tags:
     - ${DRONE_TAG}
     - latest
