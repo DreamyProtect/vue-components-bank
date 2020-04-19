@@ -23,7 +23,7 @@ steps:
   - setup
 
 - name: release
-  image: node:lts-slim
+  image: node:12
   commands:
   - npx -p semantic-release-gitmoji -p semantic-release -p @semantic-release/github -p @semantic-release/git semantic-release
   environment:
