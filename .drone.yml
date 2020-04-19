@@ -29,6 +29,9 @@ steps:
   environment:
     GITHUB_TOKEN:
       from_secret: github_token
+  depends_on:
+    - unit
+    - e2e
   when:
     branch:
     - master
