@@ -43,7 +43,7 @@ steps:
     email: chevreux.matthieu@hotmail.com
     dockerfile: ./Dockerfile
     registry: docker.pkg.github.com
-    repo: dreamyprotect/vue-components-bank
+    repo: dreamyprotect/vue-components-bank/bank-front
   username:
     from_secret: github_username
   password:
