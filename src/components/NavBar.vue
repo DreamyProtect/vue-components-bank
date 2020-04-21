@@ -1,21 +1,23 @@
 <template>
-  <ul class="flex flex justify-end w-full">
-    <li v-for="(navItem, index) in routes"
-      :key="index">
-      <NavigationElement
-        :name="navItem.name"
-        :path="navItem.path"/>
-    </li>
-  </ul>
+  <div>
+    <ul class="flex justify-end w-full">
+      <li v-for="(navItem, index) in routes"
+        :key="index">
+        <NavBarNavigationElement
+          :name="navItem.name"
+          :path="navItem.path"/>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import NavigationElement from '@/components/NavigationElement'
+import NavBarNavigationElement from '@/components/NavBarNavigationElement'
 export default {
   name: 'NavBar',
   props: ['routes'],
   components: {
-    NavigationElement
+    NavBarNavigationElement
   }
 }
 </script>
