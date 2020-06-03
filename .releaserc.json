@@ -4,7 +4,11 @@
       "semantic-release-gitmoji", {
         "releaseRules": {
           "major": [":boom:"],
-          "minor": [":sparkles:", ":bento:", ":children_crossing:", ":dizzy:", ":zap:"],
+          "minor": [
+            ":sparkles:", 
+            ":bento:", 
+            ":zap:"
+          ],
           "patch": [
             ":bug:",
             ":ambulance:",
@@ -14,8 +18,7 @@
             ":wrench:",
             ":truck:",
             ":recycle:",
-            ":lipstick:",
-            ":bento:"
+            ":lipstick:"
           ]
         }
       }
